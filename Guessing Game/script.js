@@ -34,7 +34,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.score').textContent = 0;
-      document.querySelector('.message').textContent = '☹️ You lost the game';
+      displayMessage('☹️ You lost the game');
     }
   }
 });
