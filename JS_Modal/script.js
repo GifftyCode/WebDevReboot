@@ -14,9 +14,13 @@ const modalRemoved = function () {
   overlay.classList.add('hidden');
 };
 
-for (let i = 0; i < showModal.length; i++) {
+for (let i = 0; i < showModal.length; i++)
   showModal[i].addEventListener('click', modalDisplay);
-}
-close - modal.addEventListener('click', modalRemoved);
+
+closeModal.addEventListener('click', modalRemoved);
 
 overlay.addEventListener('click', modalRemoved);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) modalRemoved();
+});
